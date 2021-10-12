@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Order of time changes when reversed.
+
+sort2 uses: Merge sort
+
+How do you know?: Order of time does not changes when reversed and time slowly vary with n.
+
+sort3 uses: Selection sort
+
+How do you know?: Order of time does not changees when reversed and time not slowly vary with n.

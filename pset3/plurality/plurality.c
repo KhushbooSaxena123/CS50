@@ -1,0 +1,110 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+// Max number of candidates
+#define MAX 9
+
+// Candidates have name and vote count
+typedef struct
+{
+    string name;
+    int votes;
+}
+candidate;
+
+// Array of candidates
+candidate candidates[MAX];
+
+// Number of candidates
+int candidate_count;
+
+// Function prototypes
+bool vote(string name);
+void print_winner(void);
+
+int main(int argc, string argv[])
+{
+    // Check for invalid usage
+    if (argc < 2)
+    {
+        printf("Usage: plurality [candidate ...]\n");
+        return 1;
+    }
+
+    // Populate array of candidates
+    candidate_count = argc - 1;
+    if (candidate_count > MAX)
+    {
+        printf("Maximum number of candidates is %i\n", MAX);
+        return 2;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        candidates[i].name = argv[i + 1];
+        candidates[i].votes = 0;
+    }
+
+    int voter_count = get_int("Number of voters: ");
+
+    // Loop over all voters
+    for (int i = 0; i < voter_count; i++)
+    {
+        string name = get_string("Vote: ");
+
+        // Check for invalid vote
+        if (!vote(name))
+        {
+            printf("Invalid vote.\n");
+        }
+    }
+
+    // Display winner of election
+    print_winner();
+}
+
+// Update vote totals given a new vote
+bool vote(string name)
+{
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            candidates[i].votes += 1;
+            return true;
+        }
+    }
+    return false;
+}
+
+// Print the winner (or winners) of the election
+void print_winner(void)
+{
+    int wv[MAX] = {};          // creating an array of zeroes of size equal to maaximum number of candidates.
+    int winner = 0;
+    for (int l = 0; l < candidate_count; l++)
+    {
+        wv[l] = candidates[l].votes;
+    }
+    for (int i = 0; i < candidate_count - 1; i++) // this loop will calculate maximum number of votes.
+    {
+        if (wv[i] >= wv[i + 1])
+        {
+            winner = wv[i];
+        }
+        else
+        {
+            winner = wv[i + 1];
+        }
+
+        wv[i + 1] = winner;      // winner is a varible that has maximum value of maximum number of votes.
+    }
+    for (int j = 0; j < candidate_count; j++)  // this loop will find the cadidate/candidates having maximum number of votes.
+    {
+        if (winner == candidates[j].votes)
+        {
+            printf("%s\n", candidates[j].name);
+        }
+    }
+}
+

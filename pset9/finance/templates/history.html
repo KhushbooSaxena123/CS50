@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+           <div class="section">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Shares</th>
+                            <th>Price</th>
+                            <th>Transected</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                          {% for row in rows %}
+                            <tr>
+                                <td>{{row.symbol}}</td>
+                                <td>{{row.shares}}</td>
+                                <td>{{"$%.2f"|format(row.price|float)}}</td>
+                                <td>{{row.datetime}}</td>
+                            </tr>
+
+                          {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+{% endblock %}

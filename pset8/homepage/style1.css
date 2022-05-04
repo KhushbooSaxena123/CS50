@@ -1,0 +1,40 @@
+body {
+    background-image: url('https://wallpaperaccess.com/full/1429963.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    resize: both;
+    margin:0;
+    height: auto;
+    width:auto;
+
+}
+h1 {
+    color: pink;
+    text-align: center;
+    text-shadow:2px 2px 5px red;
+    font-family: "Brush Script MT ", cursive;
+}
+p{
+    text-align: center;
+    color: white;
+    text-shadow:2px 2px 5px red;
+}
+h3{
+    text-align: center;
+    font-family: "Brush Script MT ", cursive;
+    color: lightgreen;
+    text-shadow:2px 2px 5px red;
+}
+h5{
+    color:peachpuff;
+    font-family: "Brush Script MT ", cursive;
+    text-shadow:2px 2px 5px red;
+}
+li{
+    text-align: center;
+    color: white;
+    list-style-position: inside;
+    color: #f08080;
+    font-family: "Brush Script MT ", cursive;
+}

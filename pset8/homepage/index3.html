@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lan="en">
+    <head>
+        <title>Physics Wolrd</title>
+        <meta name="viewpoint" content="intial=scale-1, width= device-width, height= device-height">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="style3.css" rel="stylesheet">
+        <script>
+            function greet()
+            {
+                let name = document.querySelector('#name').value;
+                alert('hello, ' + name+' .Welcome to the Anime World');
+            }
+           document.addEventListener("DOMContentLoaded", function() {
+
+
+                // When correct answer is clicked, change color to green
+                let correct = document.querySelectorAll(".correct");
+                for (let j = 0; j < correct.length; j++){
+                    correct[j].addEventListener("click", function() {
+                        correct[j].style.backgroundColor = "green";
+                        document.querySelector("#return_part_1").innerHTML = "Correct!";
+                    });
+                }
+
+                // When any incorrect answer is clicked, change color to red
+                let incorrect = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener("click", function() {
+                       incorrect[i].style.backgroundColor = "red";
+                       document.querySelector("#return_part_1").innerHTML = "Incorrect!";
+                    });
+                }
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>Physics world</h1>
+        <h3>Before we begine let me greet you!</h3>
+        <form onsubmit="greet(); return false;" style="text-align:center;">
+            <input id="name" autocomplete="off" placeholder= "What is your name?" type= "text" style="background-color:darkslateblue;">
+            <input type= "submit" label="greet" style="background-color:indigo ;">
+        </form>
+        <p>Congratulations, if you guessed it correctly. Now we will begin the quiz on Physics</p>
+        <p>Following are some simple question and we will see if you can guess, the answer to those questions correctly.</p>
+        <p id="return_part_1"></p>
+        <h5>Who quated “I think I can safely say that nobody really understands quantum mechanics”?</h5>
+        <button class= "incorrect" style= "background-color:indigo;">Albert Einstein</button>
+        <button class= "correct" style= "background-color:indigo;">Richard Feynman</button>
+        <button class= "incorrect" style= "background-color:indigo;">Neels Bore</button>
+        <button class= "incorrect" style= "background-color:indigo;">Hendrik Lorentz</button>
+
+        <h5>What is the colour of newborn stars?</h5>
+        <button class= "incorrect" style= "background-color:indigo;">Red</button>
+        <button class= "incorrect" style= "background-color:indigo;">Grenn</button>
+        <button class= "correct" style= "background-color:indigo;">Blue</button>
+        <button class= "incorrect" style= "background-color:indigo;">Yellow</button>
+        <p>Following are the links to other pages</p>
+        <ul>
+            <li><a href="https://ide-30240136a43449b0bec6d07b2e88a457-8080.cs50.ws/index2.html" id="1">Muzan Kubutsuji</a></li>
+            <li><a href="https://ide-30240136a43449b0bec6d07b2e88a457-8080.cs50.ws/index1.html" id="1">God's Menu</a></li>
+            <li><a href="https://ide-30240136a43449b0bec6d07b2e88a457-8080.cs50.ws/index.html" id="1">Homepage</a></li>
+        </ul>
+    </body>
+</html>
